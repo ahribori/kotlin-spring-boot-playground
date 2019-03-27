@@ -6,6 +6,7 @@ plugins {
 }
 
 apply plugin: 'io.spring.dependency-management'
+apply plugin: 'kotlin-allopen'
 
 group = 'com.ahribori'
 version = '0.0.1-SNAPSHOT'
@@ -37,4 +38,8 @@ compileTestKotlin {
 		freeCompilerArgs = ['-Xjsr305=strict']
 		jvmTarget = '1.8'
 	}
+}
+
+allOpen {
+	annotation("javax.persistence.Entity")
 }
