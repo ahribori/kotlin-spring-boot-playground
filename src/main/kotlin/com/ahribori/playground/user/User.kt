@@ -1,4 +1,4 @@
-package com.ahribori.playground.models
+package com.ahribori.playground.user
 
 import javax.persistence.Entity
 import javax.persistence.GeneratedValue

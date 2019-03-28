@@ -1,4 +1,4 @@
-package com.ahribori.playground.controllers
+package com.ahribori.playground.article
 
 import org.springframework.web.bind.annotation.*
 

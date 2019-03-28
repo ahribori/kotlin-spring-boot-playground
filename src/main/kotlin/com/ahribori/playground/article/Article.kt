@@ -1,5 +1,6 @@
-package com.ahribori.playground.models
+package com.ahribori.playground.article
 
+import com.ahribori.playground.user.User
 import javax.persistence.*
 
 @Entity
