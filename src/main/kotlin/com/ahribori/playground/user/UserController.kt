@@ -28,7 +28,9 @@ class UserController {
     }
 
     @DeleteMapping("/{userId}")
-    fun deleteUser(@PathVariable userId: String): String {
-        return "Delete User"
+    fun deleteUser(@PathVariable userId: Long): String {
+        var storedUser: User = userRepository.findById(userId).orElseThrow { UserNotFoundException() }
+        userRepository.delete(storedUser);
+        return "OK"
     }
 }
