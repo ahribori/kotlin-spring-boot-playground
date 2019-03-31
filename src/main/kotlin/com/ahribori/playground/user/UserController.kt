@@ -2,6 +2,7 @@ package com.ahribori.playground.user
 
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.web.bind.annotation.*
+import java.util.*
 
 @RestController
 @RequestMapping("/users")
@@ -20,8 +21,10 @@ class UserController {
     }
 
     @PutMapping("/{userId}")
-    fun modifyUser(@PathVariable userId: String, @RequestBody user: User): String {
-        return "Modify User"
+    fun modifyUser(@PathVariable userId: Long, @RequestBody user: User): User {
+        var storedUser: User = userRepository.findById(userId).orElseThrow { UserNotFoundException() }
+        storedUser.userName = user.userName;
+        return userRepository.save(storedUser);
     }
 
     @DeleteMapping("/{userId}")
